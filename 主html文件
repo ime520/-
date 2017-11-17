@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.stage{position: relative;width: 200px;height: 200px;top: 200px;left: 200px;perspective: 2300px;transform-style: preserve-3d;animation: stage 3s linear 12s infinite;}
+		.top,.bottom,.left,.right,.back,.front{width:200px;height:200px;border:black solid 1px;position: absolute;text-align: center;font:20px/200px "微软雅黑";transition: background-color 3s;}
+		.top{animation: top 2s 0s both;}
+		.bottom{animation: bottom 2s 2s both;}
+		.left{animation: left 2s 4s both;}
+		.right{animation: right 2s 6s both;}
+		.back{animation: back 2s 8s both;}
+		.front{animation: front 2s 10s both;}
+		@keyframes top{0%{transform: rotateX(0deg);} 100%{transform:rotateX(90deg) translateZ(100px);}}
+		@keyframes bottom{0%{transform: rotateX(0deg);} 100%{transform:rotateX(-90deg) translateZ(100px);}}
+		@keyframes left{0%{transform: rotateY(0deg);} 100%{transform:rotateY(-90deg) translateZ(100px);}}
+		@keyframes right{0%{transform: rotateY(0deg);} 100%{transform:rotateY(90deg) translateZ(100px);}}
+		@keyframes back{0%{transform: rotateY(0deg)} 100%{transform:rotateY(180deg) translateZ(100px);}}
+		@keyframes front{0%{transform: none;} 100%{transform:translateZ(100px);}}
+		@keyframes stage{0%{transform: rotate3d(1,1,1,0deg);} 100%{transform: rotate3d(1,1,1,360deg);}}
+		.stage:hover .top{background-color: rgba(255,204,0,0.8);}
+		.stage:hover .bottom{background-color: rgba(37,219,4,0.8);}
+		.stage:hover .left{background-color: rgba(39,232,215,0.8);}
+		.stage:hover .right{background-color: rgba(5,57,255,0.8);}
+		.stage:hover .front{background-color: rgba(255,79,216,0.8);}
+		.stage:hover .left{background-color: rgba(255,67,5,0.8);}
+
+	</style>
+</head>
+<body>
+	<div class="stage">
+			<div class="top">top</div>
+			<div class="bottom">bottom</div>
+			<div class="left">left</div>
+			<div class="right">right</div>
+			<div class="back">back</div>
+			<div class="front">front</div>
+		</div>
+	</div>
+</body>
+</html>
